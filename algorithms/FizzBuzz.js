@@ -3,41 +3,28 @@
 /* Author: Eduard H. */
 /* Description: FizzBuzz Algorithm & Variables */
 
-/**********************************/
-/* ***** FizzBuzz Algorithm ***** */
-/**********************************/
+/**
+ * FizzBuzz Function.
+ * @param {number} n - El número hasta el cual contar (inclusive).
+ * Imprime en consola los resultados según las reglas de FizzBuzz:
+ * - "Fizz" para múltiplos de 3.
+ * - "Buzz" para múltiplos de 5.
+ * - "FizzBuzz" para múltiplos de 15.
+ * - El número mismo para los demás números.
+ */
 
 function fizzBuzz(n) {
     for (let i = 1; i <= n; i++) {
-        let str = ''
-        if (i % 3 === 0) str += 'Fizz'
-        if (i % 5 === 0) str += 'Buzz'
-        console.log(str || i)
+        if (i % 15 === 0) {
+            console.log('FizzBuzz')
+        } else if (i % 3 === 0) {
+            console.log('Fizz')
+        } else if (i % 5 === 0) {
+            console.log('Buzz')
+        } else {
+            console.log(i)
+        }
     }
-}
-
-/*********************************/
-/* ***** FizzBuzz Variable ***** */
-/*********************************/
-
-function fizzBuzz_var01(n) {
-    for (let i = 1; i <= n; i++) {
-        if (i % 15 === 0) console.log('FizzBuzz')
-        else if (i % 3 === 0) console.log('Fizz')
-        else if (i % 5 === 0) console.log('Buzz')
-        else console.log(i)
-    }
-}
-
-/*********************************/
-/* ***** FizzBuzz variable ***** */
-/*********************************/
-
-function fizzBuzz_var02(n) {
-    return Array.from({ length: n }, (_, i) => {
-        let x = i + 1
-        return (x % 15 === 0 ? 'FizzBuzz' : x % 3 === 0 ? 'Fizz' : x % 5 === 0 ? 'Buzz' : x)
-    })
 }
 
 export default fizzBuzz
