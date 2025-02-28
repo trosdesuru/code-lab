@@ -1,42 +1,45 @@
-import fizzBuzz from '../algorithms/fizzBuzz.js'
+import fizzBuzz from './fizzBuzz.js'
 import { expect } from 'chai'
-import { describe } from 'node:test'
+import sinon from 'sinon'
 
-const testCases = Array.from({ length: 100}, (_, i))
-console.log (fizzBuzz(testCases))
+describe('FizzBuzz Function Tests', () => {
+    let consoleSpy
 
-describe('FizzBuzz Algorithm', () => {
-    it('should return FizzBuzz', () => {
-        expect(fizzBuzz(15)).to.equal('FizzBuzz')
+    beforeEach(() => {
+        consoleSpy = sinon.spy(console, 'log')
     })
-    it('should return Fizz', () => {
-        expect(fizzBuzz(3)).to.equal('Fizz')
+    afterEach(() => {
+        consoleSpy.restore()
     })
-    it('should return Buzz', () => {
-        expect(fizzBuzz(5)).to.equal('Buzz')
+
+    it('should print "Fizz" for multiples of 3', () => {
+        fizzBuzz(3)
+        expect(consoleSpy.calledWith('Fizz')).to.be.true
     })
-    it('should return 1', () => {
-        expect(fizzBuzz(1)).to.equal(1)
+
+    it('should print "Buzz" for multiples of 5', () => {
+        fizzBuzz(5)
+        expect(consoleSpy.calledWith('Buzz')).to.be.true
     })
-    it('should return 2', () => {
-        expect(fizzBuzz(2)).to.equal(2)
+
+    it('should print "FizzBuzz" for multiples of 15', () => {
+        fizzBuzz(15)
+        expect(consoleSpy.calledWith('FizzBuzz')).to.be.true
     })
-    it('should return 4', () => {
-        expect(fizzBuzz(4)).to.equal(4)
+
+    it('should print the number itself for non-multiples of 3 or 5', () => {
+        fizzBuzz(7)
+        expect(consoleSpy.calledWith(7)).to.be.true
     })
-    it('should return 7', () => {
-        expect(fizzBuzz(7)).to.equal(7)
+
+    it('should print the correct sequence for numbers 1 to 15', () => {
+        fizzBuzz(15)
+        const expectedOutput = [
+            1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz'
+        ]
+        expectedOutput.forEach((expectedValue, index) => {
+            expect(consoleSpy.getCall(index).args[0]).to.equal(expectedValue)
+        })
     })
-    it('should return 8', () => {
-        expect(fizzBuzz(8)).to.equal(8)
-    })
-    it('should return 11', () => {
-        expect(fizzBuzz(11)).to.equal(11)
-    })
-    it('should return 13', () => {
-        expect(fizzBuzz(13)).to.equal(13)
-    })
-    it('should return 14', () => {
-        expect(fizzBuzz(14)).to.equal(14)
-    })
+
 })
