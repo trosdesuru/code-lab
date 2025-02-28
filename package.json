@@ -1,0 +1,19 @@
+{
+  "name": "code-lab",
+  "version": "1.0.0",
+  "description": "🚀 A space to experiment with functions, algorithms, and small JavaScript snippets.",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.1.0"
+  }
+}
