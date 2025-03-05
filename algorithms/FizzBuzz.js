@@ -10,7 +10,7 @@
  * - "Fizz" para múltiplos de 3.
  * - "Buzz" para múltiplos de 5.
  * - "FizzBuzz" para múltiplos de 15.
- * - El número mismo para los demás números.
+ * - El resto de números los imprime por pantalla sin variaciones.
  */
 
 function fizzBuzz(n) {
