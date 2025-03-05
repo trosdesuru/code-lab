@@ -1,4 +1,4 @@
-import fizzBuzz from './fizzBuzz.js'
+import { fizzBuzz } from '../algorithms/index.js'
 import { expect } from 'chai'
 import sinon from 'sinon'
 
@@ -28,7 +28,7 @@ describe('FizzBuzz Function Tests', () => {
     })
 
     it('should print the number itself for non-multiples of 3 or 5', () => {
-        fizzBuzz(7)
+        fizzBuzz(20)
         expect(consoleSpy.calledWith(7)).to.be.true
     })
 

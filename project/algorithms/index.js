@@ -1,9 +1,5 @@
 import fizzBuzz from './fizzBuzz.js'
 
-const functions = {
-
+export {
     fizzBuzz
-
 }
-
-export default functions
