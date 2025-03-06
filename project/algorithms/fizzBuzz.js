@@ -1,17 +1,13 @@
-/* File: FizzBuzz.js */
-/* Date: 09/20/2020 */
-/* Author: Eduard H. */
-/* Description: FizzBuzz Algorithm & Variables */
+/* FizzBuzz Function. */
 
 /**
- * FizzBuzz Function.
  * @param {number} n - El número hasta el cual contar (inclusive).
  * Imprime en consola los resultados según las reglas de FizzBuzz:
  * - "Fizz" para múltiplos de 3.
  * - "Buzz" para múltiplos de 5.
  * - "FizzBuzz" para múltiplos de 15.
  * - El resto de números los imprime por pantalla sin variaciones.
- */
+ **/
 
 function fizzBuzz(n) {
     for (let i = 1; i <= n; i++) {
